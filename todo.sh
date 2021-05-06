@@ -17,4 +17,4 @@ fi
 
 
 export COMPONENT
-bash componets/${COMPONENT}.sh
+bash -x componets/${COMPONENT}.sh
