@@ -12,7 +12,7 @@ Head() {
 OS_PREREQ() {
    set-hostname $(COMPONENT)
    Head "Updating APT Repos"
-   apt update &>$LOG
+   apt update &>>$LOG
 }
 ERROR() {
   echo -e "\e[1;31m$1\e[0m"

@@ -1,6 +1,10 @@
 #!/bin/bash
 
 COMPONENT=$1
+export LOG=/tmp/${COMPONENT}.log
+rm -f $LOG
+
+
 
 source componets/common.sh
 if [ | -f componets/${COMPONENT}.sh]; then
