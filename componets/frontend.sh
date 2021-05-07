@@ -2,15 +2,16 @@
 source componets/common.sh
 
 OS_PREREQ
-Head "Set hostname & update repo"
-REPEAT
 
 Head "Install Nginx"
-apt install nginx -y >>"${LOG}"
+apt install nginx -y &>>${LOG}
 Head "Start Nginx"
 systemctl start nginx
-Head "Install Node "
-npm install >>"${LOG}"
+Head "Install Nodejs"
+apt-get npm install nodejs -y &>>${LOG}
+
+Head "Install Npm"
+apt npm install &>>${LOG}
 Stat $?
 
 Head "Change directory and make vue directory and switch to vue directory"
@@ -22,14 +23,8 @@ Head "Clone code from Github"
 git clone https://github.com/zelar-soft-todoapp/frontend.git &>>$LOG && cd frontend
 Stat $?
 
-Head "Install Npm"
-npm install >>"${LOG}"
-STAT $?
-
 Head "Run build"
-npm run build >>"${LOG}"
-Killall node >>"${LOG}"
-npm run build
+npm install &>>$LOG && npm run build &>>$LOG
 Stat $?
 
 Head "Change root path in nginx"
