@@ -3,7 +3,7 @@
 source components/common.sh
 OS_PREREQ
 
-Head "Installing Java and Maven"
+Head "Installing Dependency"
 apt install openjdk-8-jdk -y &>>$LOG && apt install maven -y &>>$LOG
 stat $?
 
