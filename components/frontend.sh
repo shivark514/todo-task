@@ -4,7 +4,7 @@ source components/common.sh
 
 OS_PREREQ
 
-Head "Installing Nginx and Npm"
+Head "Installing Dependency"
 sudo apt install nginx -y &>>$LOG
 sudo apt install npm -y &>>$LOG
 stat $?

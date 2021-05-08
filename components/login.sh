@@ -3,7 +3,7 @@
 source components/common.sh
 OS_PREREQ
 
-Head "Installing Go"
+Head "Installing Dependency"
 apt install golang -y &>>$LOG
 Stat $?
 
