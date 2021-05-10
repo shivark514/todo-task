@@ -8,7 +8,9 @@ apt install golang -y &>>$LOG
 Stat $?
 
 Head "Downloading Component"
+
 cd /root/
+rm -rf login
 git clone https://github.com/swathi-zelarsoft680/login.git&>>$LOG && cd login
 
 
@@ -22,7 +24,7 @@ Head "Again Build"
 go build main.go user.go tracing.go &>>$LOG
 
 #rm -rf /etc/systemd/system/login.service
-#mv systemd.service /etc/systemd/system/login.service
+mv systemd.service /etc/systemd/system/login.service
 
 Head "Restarting Services"
 systemctl daemon-reload &>>$LOG && systemctl start login && systemctl enable login &>>$LOG
