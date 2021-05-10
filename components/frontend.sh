@@ -18,8 +18,10 @@ npm install &>>$LOG && npm run build &>>$LOG
 
 
 Head "Moving Conf file"
-sed -i -e 's+/var/www/html+/var/www/html/frontend/dist+g' /etc/nginx/sites-enabled/default
-Stat $?
+mv frontend.conf /etc/nginx/sites-enabled/default
+sed -i -e "s/LOGIN_ENDPOINT/login.swathi.host/" -e "s/TODO_ENDPOINT/todo.swathi.host/" /etc/nginx/sites-enabled/default
+stat $?
+
 Head "Exporting Ip's"
 export AUTH_API_ADDRESS=http://login.swathi.host:8080
 export TODOS_API_ADDRESS=http://todo.swathi.host:8080

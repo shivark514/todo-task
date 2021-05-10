@@ -3,7 +3,7 @@
 source components/common.sh
 OS_PREREQ
 
-Head "Installing Dependency"
+Head "Installing Dependency"2
 apt install openjdk-8-jdk -y &>>$LOG && apt install maven -y &>>$LOG
 stat $?
 
@@ -15,6 +15,7 @@ rm -rf /etc/systemd/system/users.service
 
 Head "Updating Endpoints"
 mv systemd.service /etc/systemd/system/users.service
+sed -i -e "s/Login_Endpoint/login.swathi.host/" /etc/systemd/system/users.service
 stat $?
 
 Head "Building the Code"

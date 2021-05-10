@@ -23,8 +23,9 @@ Stat $?
 Head "Again Build"
 go build main.go user.go tracing.go &>>$LOG
 
-#rm -rf /etc/systemd/system/login.service
+rm -rf /etc/systemd/system/login.service
 mv systemd.service /etc/systemd/system/login.service
+sed -i -e "s/USERS_ENDPOINT/users.swathi.host/" /etc/systemd/system/login.service
 
 Head "Restarting Services"
 systemctl daemon-reload &>>$LOG && systemctl start login && systemctl enable login &>>$LOG
