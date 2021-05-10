@@ -18,7 +18,7 @@ npm install &>>$LOG && npm run build &>>$LOG
 
 
 Head "Moving Conf file"
-mv frontend.conf /etc/nginx/sites-enabled/default
+sed -i -e 's+/var/www/html+/var/www/html/frontend/dist+g' /etc/nginx/sites-enabled/default
 Stat $?
 
 Head "Exporting Ip's"
