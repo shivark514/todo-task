@@ -21,8 +21,8 @@ Head "Moving Conf file"
 sed -i -e 's+/var/www/html+/var/www/html/frontend/dist+g' /etc/nginx/sites-enabled/default
 Stat $?
 Head "Exporting Ip's"
-export AUTH_API_ADDRESS=http://172.31.24.10:8080
-export TODOS_API_ADDRESS=http://172.31.21.55:8080
+export AUTH_API_ADDRESS=http://login.swathi.host:8080
+export TODOS_API_ADDRESS=http://todo.swathi.host:8080
 
 Head "Restart nginx"
 systemctl restart nginx
