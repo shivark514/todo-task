@@ -29,6 +29,6 @@ systemctl restart nginx
 systemctl enable nginx
 
 
-
+cd /var/www/html/frontend/
 Head "Starting Npm Service"
 npm start
