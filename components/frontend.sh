@@ -15,7 +15,7 @@ cd /var/www/html && git clone https://github.com/swathi-zelarsoft680/frontend.gi
 
 Head "Building the Code"
 npm install &>>$LOG && npm run build &>>$LOG
-Stat $?
+
 
 Head "Moving Conf file"
 mv frontend.conf /etc/nginx/sites-enabled/default
